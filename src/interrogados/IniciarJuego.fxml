@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interrogados.IniciarJuegoController">
+   <children>
+      <Button fx:id="btnMeLaJuego" layoutX="261.0" layoutY="337.0" mnemonicParsing="false" onAction="#clck" style="-fx-background-color: #65f267;" text="Me la juego" />
+      <RadioButton fx:id="radioButtonPregunta1" layoutX="100.0" layoutY="192.0" mnemonicParsing="false" text="Respuesta 1" textFill="#65f267" />
+      <RadioButton fx:id="radioButtonPregunta2" layoutX="100.0" layoutY="229.0" mnemonicParsing="false" text="Respuesta 2" textFill="#65f267" />
+      <Label fx:id="idLabelPregunta" alignment="CENTER" layoutX="23.0" layoutY="85.0" prefHeight="93.0" prefWidth="551.0" text="Label" textFill="#42cc49">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <RadioButton fx:id="radioButtonPregunta3" layoutX="347.0" layoutY="184.0" mnemonicParsing="false" text="Respuesta 3" textFill="#65f267" />
+      <RadioButton fx:id="radioButtonPregunta4" layoutX="347.0" layoutY="229.0" mnemonicParsing="false" text="Respuesta 4" textFill="#65f267" />
+      <Label alignment="CENTER" layoutX="95.0" layoutY="27.0" prefHeight="58.0" prefWidth="407.0" text="1NT3RR0G42">
+         <font>
+            <Font size="40.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.4886363762797732">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.10978557169437408" green="0.46315789222717285" blue="0.13923326134681702" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+   </children>
+</AnchorPane>
