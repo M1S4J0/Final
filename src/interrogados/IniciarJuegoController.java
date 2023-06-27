@@ -26,8 +26,9 @@ import java.util.List;
 public class IniciarJuegoController implements Initializable {
 
     private int numero_pregunta = -1;
-    private int numero_rapuesta_correcta;
+    private int numero_respuesta_correcta;
     private boolean juego_terminado = false;
+   
     
     // Salto de linea \n
     private String[][] preguntas = {
@@ -97,12 +98,21 @@ public class IniciarJuegoController implements Initializable {
          },
         {
             "Si 5 máquinas hacen 5 artículos en 5 minutos, ¿cuánto tiempo "
-            +"\ndedicarán 100 máquinas en hacer 100 artículos??",
+            +"\ndedicarán 100 máquinas en hacer 100 artículos?",
             "5 minutos",
             "5 articulos",
             "5 maquinas",
             "ninguna de las anteriores",
             "0",
+         },
+        {
+            "¿Cómo se llama la cordillera costera más alta del mundo"
+            + "\nubicada en Colombia?",
+            "Nevado Cocuy",
+            "Sierra Nevada de Santa Marta",
+            "Nevado del Ruiz",
+            "Volcan Purace",
+            "1",
          },
     };
 
@@ -121,6 +131,7 @@ public class IniciarJuegoController implements Initializable {
     List<RadioButton> radioButtons = new ArrayList<>();
     @FXML
     private Button btnMeLaJuego;
+    
 
     /**
      * Initializes the controller class.
@@ -152,7 +163,7 @@ public class IniciarJuegoController implements Initializable {
             RadioButton radioButtonSeleccionado = (RadioButton) this.toggleGroup.getSelectedToggle();
             if (radioButtonSeleccionado != null) {
                 int posicion_seleccionado = radioButtons.indexOf(radioButtonSeleccionado);
-                boolean respuesta_correcta = posicion_seleccionado == this.numero_rapuesta_correcta;
+                boolean respuesta_correcta = posicion_seleccionado == this.numero_respuesta_correcta;
 
                 if (respuesta_correcta) {
                     this.mostrarSiguientePregunta();
@@ -177,7 +188,7 @@ public class IniciarJuegoController implements Initializable {
         radioButtonPregunta2.setText(pregunta_actual[2]);  // Respuesta 2
         radioButtonPregunta3.setText(pregunta_actual[3]);  // Respuesta 3
         radioButtonPregunta4.setText(pregunta_actual[4]);  // Respuesta 4
-        numero_rapuesta_correcta = Integer.parseInt(pregunta_actual[5]); // Respuesta 5
+        numero_respuesta_correcta = Integer.parseInt(pregunta_actual[5]); // Respuesta 5
 
         // Quitar
         /*
@@ -187,7 +198,7 @@ public class IniciarJuegoController implements Initializable {
         */
     }
 
-    
+    @FXML
     private void finDelJuego() {
         this.juego_terminado = true;
 

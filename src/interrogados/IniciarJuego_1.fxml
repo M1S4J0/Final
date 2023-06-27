@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interrogados.IniciarJuegoController">
    <children>
-      <Button fx:id="iniciodejuego1" layoutX="261.0" layoutY="337.0" mnemonicParsing="false" onAction="#clck" style="-fx-background-color: #65f267;" text="INCIO DE JUEGO" />
+      <Button fx:id="iniciodejuego1" layoutX="261.0" layoutY="337.0" mnemonicParsing="false" onAction="#switchToIniciarJuego" style="-fx-background-color: #65f267;" text="INICIO DE JUEGO" />
       <Label alignment="CENTER" layoutX="73.0" layoutY="25.0" prefHeight="77.0" prefWidth="456.0" text="1NT3RR0G42">
          <font>
             <Font size="64.0" />
