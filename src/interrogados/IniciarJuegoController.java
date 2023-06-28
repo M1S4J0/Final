@@ -74,7 +74,7 @@ public class IniciarJuegoController implements Initializable {
             "2",
          },
 	{
-            "¿Cuánto vale el número pi?",
+            "¿A Cuánto equivale el número pi?",
             "3.15",
             "3.1416",
             "3",
