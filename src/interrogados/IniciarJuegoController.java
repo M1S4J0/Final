@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * FXML Controller class
  *
- * @author nombre_usuario
+ * @author Yenni,Ever,Johan
  */
 public class IniciarJuegoController implements Initializable {
 
@@ -82,7 +82,7 @@ public class IniciarJuegoController implements Initializable {
             "1",
          },
         {
-            "Color primario",
+            "¿Cual es el color primario",
             "blanco",
             "negro",
             "azul",
@@ -250,7 +250,7 @@ public class IniciarJuegoController implements Initializable {
     private void finDelJuego() {
         this.juego_terminado = true;
 
-        idLabelPregunta.setText("Respuesta incorrecta, fin del juego");
+        idLabelPregunta.setText("Respuesta incorrecta, Vuelve a intentarlo");
         radioButtonPregunta1.setVisible(false);
         radioButtonPregunta2.setVisible(false);
         radioButtonPregunta3.setVisible(false);
