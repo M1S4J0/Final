@@ -21,17 +21,18 @@ import java.util.List;
 /**
  * FXML Controller class
  *
- * @author yengal,Ever,Johan
+ * @author nombre_usuario
  */
 public class IniciarJuegoController implements Initializable {
 
     private int numero_pregunta = -1;
-    private int numero_respuesta_correcta;
+    private int numero_rapuesta_correcta;
     private boolean juego_terminado = false;
-   
+    private boolean pantallaInicio = true;
+    private boolean gano = false;
     
     // Salto de linea \n
-    private String[][] preguntas = {
+    private final String[][] preguntas = {
         {
             "¿Cuántas veces puede restarse el número 1 del número 1.111?",  // Pregunta
             "1,111",    // Respuesta 0
@@ -41,7 +42,7 @@ public class IniciarJuegoController implements Initializable {
             "3",        // Numero respuesta correcta inicia desde 0
         },
         {
-            "¿Quien escribio Romeo y julieta?",
+            "¿quien escribio la obra Hamlet?",
             "Bram Stoker",
             "William Shakespeare",
             "Dante Alighieri",
@@ -97,8 +98,8 @@ public class IniciarJuegoController implements Initializable {
             "3",
          },
         {
-            "Si 5 máquinas hacen 5 artículos en 5 minutos, ¿cuánto tiempo "
-            +"\ndedicarán 100 máquinas en hacer 100 artículos?",
+            "Si 5 máquinas hacen 5 artículos en 5 minutos, "
+            +"\n¿cuánto tiempo dedicarán 100 máquinas en hacer 100 artículos??",
             "5 minutos",
             "5 articulos",
             "5 maquinas",
@@ -114,6 +115,7 @@ public class IniciarJuegoController implements Initializable {
             "Volcan Purace",
             "1",
          },
+        
     };
 
 
@@ -131,13 +133,20 @@ public class IniciarJuegoController implements Initializable {
     List<RadioButton> radioButtons = new ArrayList<>();
     @FXML
     private Button btnMeLaJuego;
-    
+    @FXML
+    private Label labelInicioArriba;
+    @FXML
+    private Label labelInicioCentro;
+    @FXML
+    private Label labelInicioAbajo;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        this.pantallaInicio();
+
         // Agregamos los radioButtons a un ToggleGroup
         // para que al seleccionar un radioButton se
         // desselecciones los demas
@@ -152,21 +161,27 @@ public class IniciarJuegoController implements Initializable {
         this.radioButtons.add(radioButtonPregunta2);
         this.radioButtons.add(radioButtonPregunta3);
         this.radioButtons.add(radioButtonPregunta4);
-
-        this.mostrarSiguientePregunta();
     }
 
 
     @FXML
     private void clck(ActionEvent event) {
-        if (!this.juego_terminado) {
+        if (pantallaInicio) {
+            this.mostrarPregunta();
+            pantallaInicio = false;
+            this.mostrarSiguientePregunta();
+        } else if (!this.juego_terminado) {
             RadioButton radioButtonSeleccionado = (RadioButton) this.toggleGroup.getSelectedToggle();
             if (radioButtonSeleccionado != null) {
                 int posicion_seleccionado = radioButtons.indexOf(radioButtonSeleccionado);
-                boolean respuesta_correcta = posicion_seleccionado == this.numero_respuesta_correcta;
+                boolean respuesta_correcta = posicion_seleccionado == this.numero_rapuesta_correcta;
 
                 if (respuesta_correcta) {
-                    this.mostrarSiguientePregunta();
+                    if (this.gano) {
+                        this.reiniciarJuego();
+                    } else {
+                        this.mostrarSiguientePregunta();
+                    }
                 } else {
                     this.finDelJuego();
                 }
@@ -177,25 +192,58 @@ public class IniciarJuegoController implements Initializable {
             this.reiniciarJuego();
         }
     }
+
+
+    @FXML
+    private void hola(ActionEvent event) {
+        // asdf
+    }
     
+    @FXML
+    private void pantallaInicio() {
+        idLabelPregunta.setVisible(false);
+        radioButtonPregunta1.setVisible(false);
+        radioButtonPregunta2.setVisible(false);
+        radioButtonPregunta3.setVisible(false);
+        radioButtonPregunta4.setVisible(false);
+        
+         labelInicioArriba.setVisible(true);
+        labelInicioCentro.setVisible(true);
+        labelInicioAbajo.setVisible(true);
+    }
+    
+    @FXML
+    private void mostrarPregunta() {
+        idLabelPregunta.setVisible(true);
+        radioButtonPregunta1.setVisible(true);
+        radioButtonPregunta2.setVisible(true);
+        radioButtonPregunta3.setVisible(true);
+        radioButtonPregunta4.setVisible(true);
+
+        labelInicioArriba.setVisible(false);
+        labelInicioCentro.setVisible(false);
+        labelInicioAbajo.setVisible(false);
+    }
+
     @FXML
     private void mostrarSiguientePregunta() {
         this.numero_pregunta++;
-        String pregunta_actual[] = preguntas[this.numero_pregunta];
+        if (this.numero_pregunta < preguntas.length) {
+            String pregunta_actual[] = preguntas[this.numero_pregunta];
 
-        idLabelPregunta.setText(pregunta_actual[0]);       // Pregunta
-        radioButtonPregunta1.setText(pregunta_actual[1]);  // Respuesta 1
-        radioButtonPregunta2.setText(pregunta_actual[2]);  // Respuesta 2
-        radioButtonPregunta3.setText(pregunta_actual[3]);  // Respuesta 3
-        radioButtonPregunta4.setText(pregunta_actual[4]);  // Respuesta 4
-        numero_respuesta_correcta = Integer.parseInt(pregunta_actual[5]); // Respuesta 5
-
-        // Quitar
-        /*
-        if (this.numero_pregunta == 2) {
-            this.numero_pregunta = -1;
+            idLabelPregunta.setText(pregunta_actual[0]);       // Pregunta
+            radioButtonPregunta1.setText(pregunta_actual[1]);  // Respuesta 1
+            radioButtonPregunta2.setText(pregunta_actual[2]);  // Respuesta 2
+            radioButtonPregunta3.setText(pregunta_actual[3]);  // Respuesta 3
+            radioButtonPregunta4.setText(pregunta_actual[4]);  // Respuesta 4
+            numero_rapuesta_correcta = Integer.parseInt(pregunta_actual[5]); // Respuesta 5
+        } else {
+            this.pantallaInicio();
+            labelInicioCentro.setText("¡¡¡ Felicidades, ganaste el juego, muchas gracias por jugar !!!");
+            this.gano = true;
         }
-        */
+
+  
     }
 
     @FXML
@@ -215,14 +263,24 @@ public class IniciarJuegoController implements Initializable {
     private void reiniciarJuego() {
         this.numero_pregunta = -1;
         this.juego_terminado = false;
+        this.gano = false;
 
         radioButtonPregunta1.setVisible(true);
         radioButtonPregunta2.setVisible(true);
         radioButtonPregunta3.setVisible(true);
         radioButtonPregunta4.setVisible(true);
-
-        btnMeLaJuego.setText("Me la juego");
         
+        radioButtonPregunta4.setVisible(true);
+        radioButtonPregunta4.setVisible(true);
+        radioButtonPregunta4.setVisible(true);
+        radioButtonPregunta4.setVisible(true);
+        
+        labelInicioArriba.setVisible(false);
+        labelInicioCentro.setVisible(false);
+        labelInicioAbajo.setVisible(false);
+        idLabelPregunta.setVisible(true);
+
+        btnMeLaJuego.setText("Jugar");
         this.mostrarSiguientePregunta();
     }
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
@@ -9,37 +10,100 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interrogados.IniciarJuegoController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interrogados.IniciarJuegoController">
    <children>
-      <Button fx:id="btnMeLaJuego" layoutX="251.0" layoutY="330.0" mnemonicParsing="false" onAction="#clck" style="-fx-background-color: #65f267;" text="Me la juego" />
-      <RadioButton fx:id="radioButtonPregunta1" layoutX="100.0" layoutY="184.0" mnemonicParsing="false" text="Respuesta 1" textFill="#65f267" />
-      <RadioButton fx:id="radioButtonPregunta2" layoutX="100.0" layoutY="238.0" mnemonicParsing="false" text="Respuesta 2" textFill="#65f267" />
-      <Label fx:id="idLabelPregunta" alignment="CENTER" layoutX="23.0" layoutY="85.0" prefHeight="93.0" prefWidth="551.0" text="Label" textFill="#42cc49">
+      <Label fx:id="labelInicioArriba" layoutX="115.0" layoutY="58.0" text="1NT3RR0G42">
          <font>
-            <Font size="18.0" />
-         </font></Label>
-      <RadioButton fx:id="radioButtonPregunta3" layoutX="347.0" layoutY="184.0" mnemonicParsing="false" text="Respuesta 3" textFill="#65f267" />
-      <RadioButton fx:id="radioButtonPregunta4" layoutX="347.0" layoutY="238.0" mnemonicParsing="false" text="Respuesta 4" textFill="#65f267" />
-      <Label alignment="CENTER" layoutX="95.0" layoutY="27.0" prefHeight="58.0" prefWidth="407.0" text="1NT3RR0G42">
-         <font>
-            <Font size="40.0" />
+            <Font size="64.0" />
          </font>
          <textFill>
-            <LinearGradient endX="1.0" endY="1.0" startX="0.4886363762797732">
+            <LinearGradient endX="1.0" endY="1.0">
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.10978557169437408" green="0.46315789222717285" blue="0.13923326134681702" />
+                        <Color green="0.25" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color green="0.250980406999588" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color green="0.7372549176216125" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
-         </textFill>
-      </Label>
+         </textFill></Label>
+      <Label fx:id="labelInicioAbajo" layoutX="113.0" layoutY="208.0" rotate="180.0" text="1NT3RR0G42">
+         <font>
+            <Font size="64.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color green="0.25" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color green="0.250980406999588" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.7372549176216125" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <Button fx:id="btnMeLaJuego" layoutX="278.0" layoutY="337.0" mnemonicParsing="false" onAction="#clck" style="-fx-background-color: #000; -fx-border-color: #00ff00; -fx-border-radius: 7px; -fx-border-width: 3px;" text="Jugar" textFill="LIME">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <RadioButton fx:id="radioButtonPregunta1" layoutX="100.0" layoutY="192.0" mnemonicParsing="false" text="Respuesta 1" textFill="LIME">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></RadioButton>
+      <RadioButton fx:id="radioButtonPregunta2" layoutX="100.0" layoutY="229.0" mnemonicParsing="false" onAction="#hola" text="Respuesta 2" textFill="LIME">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></RadioButton>
+      <Label fx:id="idLabelPregunta" layoutX="33.0" layoutY="117.0" prefHeight="17.0" prefWidth="491.0" text="Label" textFill="LIME">
+         <font>
+            <Font name="Consolas" size="14.0" />
+         </font></Label>
+      <RadioButton fx:id="radioButtonPregunta3" layoutX="347.0" layoutY="184.0" mnemonicParsing="false" text="Respuesta 3" textFill="LIME">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></RadioButton>
+      <RadioButton fx:id="radioButtonPregunta4" layoutX="347.0" layoutY="229.0" mnemonicParsing="false" text="Respuesta 4" textFill="LIME">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></RadioButton>
+      <Label fx:id="labelInicioCentro" alignment="CENTER" layoutX="-14.0" layoutY="142.0" prefHeight="17.0" prefWidth="601.0" text="Bienvenido a interrogados un juego, que desafiara tu mente" textAlignment="CENTER" textFill="LIME">
+         <font>
+            <Font name="Consolas Bold" size="16.0" />
+         </font></Label>
    </children>
 </AnchorPane>
