@@ -42,12 +42,20 @@ public class IniciarJuegoController implements Initializable {
             "3",        // Numero respuesta correcta inicia desde 0
         },
         {
-            "¿quien escribio la obra Hamlet?",
+            "¿Quien escribio la obra Hamlet?",
             "Bram Stoker",
             "William Shakespeare",
             "Dante Alighieri",
             "Ninguna de las anteriores",
             "1",
+        },
+        {
+            "¿Cuántos parques nacionales existen en Colombia? ",
+            "100",
+            "60",
+            "59",
+            "35",
+            "2",
         },
         {
             "¿Quién es el máximo goleador de la historia del fútbol?",
@@ -82,7 +90,15 @@ public class IniciarJuegoController implements Initializable {
             "1",
          },
         {
-            "¿Cual es el color primario",
+            "¿Dónde nació Van Gogh?",
+            "Londres, Inglaterra",
+            "Roma, Italia",
+            "Venecia, Italia",
+            "Zundert, Países Bajos.",
+            "3",
+         },
+        {
+            "¿Cual es un color primario?",
             "blanco",
             "negro",
             "azul",
@@ -98,8 +114,16 @@ public class IniciarJuegoController implements Initializable {
             "3",
          },
         {
+            "¿Quién dirigió 'Origen'?",
+            "Christopher Nolan.",
+            "Orson Wells.",
+            "Audrey Hepburn.",
+            "Francis Ford Coppola.",
+            "0",
+         },
+        {
             "Si 5 máquinas hacen 5 artículos en 5 minutos, "
-            +"\n¿cuánto tiempo dedicarán 100 máquinas en hacer 100 artículos??",
+            +"\n¿cuánto tiempo dedicarán 100 máquinas en hacer 100 artículos?",
             "5 minutos",
             "5 articulos",
             "5 maquinas",
@@ -239,7 +263,7 @@ public class IniciarJuegoController implements Initializable {
             numero_rapuesta_correcta = Integer.parseInt(pregunta_actual[5]); // Respuesta 5
         } else {
             this.pantallaInicio();
-            labelInicioCentro.setText("¡¡¡ Felicidades, ganaste el juego, muchas gracias por jugar !!!");
+            labelInicioCentro.setText("¡¡¡ Felicidades, ganaste el juego,muchas gracias por jugar !!!");
             this.gano = true;
         }
 

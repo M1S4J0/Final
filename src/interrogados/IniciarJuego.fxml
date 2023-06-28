@@ -69,39 +69,39 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <RadioButton fx:id="radioButtonPregunta1" layoutX="100.0" layoutY="192.0" mnemonicParsing="false" text="Respuesta 1" textFill="LIME">
+      <RadioButton fx:id="radioButtonPregunta1" layoutX="100.0" layoutY="198.0" mnemonicParsing="false" text="Respuesta 1" textFill="LIME">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></RadioButton>
-      <RadioButton fx:id="radioButtonPregunta2" layoutX="100.0" layoutY="229.0" mnemonicParsing="false" onAction="#hola" text="Respuesta 2" textFill="LIME">
+      <RadioButton fx:id="radioButtonPregunta2" layoutX="100.0" layoutY="245.0" mnemonicParsing="false" onAction="#hola" text="Respuesta 2" textFill="LIME">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></RadioButton>
-      <Label fx:id="idLabelPregunta" layoutX="33.0" layoutY="117.0" prefHeight="17.0" prefWidth="491.0" text="Label" textFill="LIME">
+      <Label fx:id="idLabelPregunta" alignment="CENTER" contentDisplay="CENTER" layoutX="49.0" layoutY="128.0" prefHeight="46.0" prefWidth="507.0" text="Label" textFill="LIME">
          <font>
             <Font name="Consolas" size="14.0" />
          </font></Label>
-      <RadioButton fx:id="radioButtonPregunta3" layoutX="347.0" layoutY="184.0" mnemonicParsing="false" text="Respuesta 3" textFill="LIME">
+      <RadioButton fx:id="radioButtonPregunta3" layoutX="347.0" layoutY="198.0" mnemonicParsing="false" text="Respuesta 3" textFill="LIME">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font name="System Bold" size="14.0" />
          </font></RadioButton>
-      <RadioButton fx:id="radioButtonPregunta4" layoutX="347.0" layoutY="229.0" mnemonicParsing="false" text="Respuesta 4" textFill="LIME">
+      <RadioButton fx:id="radioButtonPregunta4" layoutX="347.0" layoutY="245.0" mnemonicParsing="false" text="Respuesta 4" textFill="LIME">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></RadioButton>
-      <Label fx:id="labelInicioCentro" alignment="CENTER" layoutX="-14.0" layoutY="142.0" prefHeight="17.0" prefWidth="601.0" text="Bienvenido a interrogados un juego, que desafiara tu mente" textAlignment="CENTER" textFill="LIME">
+      <Label fx:id="labelInicioCentro" alignment="CENTER" layoutX="18.0" layoutY="165.0" prefHeight="18.0" prefWidth="565.0" text="Bienvenido a interrogados un juego, que desafiara tu mente" textAlignment="CENTER" textFill="LIME">
          <font>
             <Font name="Consolas Bold" size="16.0" />
          </font></Label>
